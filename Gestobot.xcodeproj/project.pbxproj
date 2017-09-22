@@ -12,8 +12,9 @@
 		CE4811941F70FE1D00DD15E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4811921F70FE1D00DD15E6 /* Main.storyboard */; };
 		CE4811961F70FE1D00DD15E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4811951F70FE1D00DD15E6 /* Assets.xcassets */; };
 		CE4811991F70FE1D00DD15E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4811971F70FE1D00DD15E6 /* LaunchScreen.storyboard */; };
-		CE4811A11F70FFD000DD15E6 /* GestureArea.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4811A01F70FFD000DD15E6 /* GestureArea.xib */; };
-		CE4811A31F70FFEE00DD15E6 /* GBGestureArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4811A21F70FFEE00DD15E6 /* GBGestureArea.swift */; };
+		CE4811A11F70FFD000DD15E6 /* GestureAreaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4811A01F70FFD000DD15E6 /* GestureAreaView.xib */; };
+		CE4811A31F70FFEE00DD15E6 /* GBGestureAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4811A21F70FFEE00DD15E6 /* GBGestureAreaView.swift */; };
+		CE4811CF1F7525BD00DD15E6 /* GBGestureAreaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4811CE1F7525BD00DD15E6 /* GBGestureAreaDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +25,9 @@
 		CE4811951F70FE1D00DD15E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE4811981F70FE1D00DD15E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE48119A1F70FE1D00DD15E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE4811A01F70FFD000DD15E6 /* GestureArea.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GestureArea.xib; sourceTree = "<group>"; };
-		CE4811A21F70FFEE00DD15E6 /* GBGestureArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBGestureArea.swift; sourceTree = "<group>"; };
+		CE4811A01F70FFD000DD15E6 /* GestureAreaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GestureAreaView.xib; sourceTree = "<group>"; };
+		CE4811A21F70FFEE00DD15E6 /* GBGestureAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBGestureAreaView.swift; sourceTree = "<group>"; };
+		CE4811CE1F7525BD00DD15E6 /* GBGestureAreaDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBGestureAreaDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +71,9 @@
 		CE4811A41F70FFF200DD15E6 /* GestureAreaView */ = {
 			isa = PBXGroup;
 			children = (
-				CE4811A21F70FFEE00DD15E6 /* GBGestureArea.swift */,
-				CE4811A01F70FFD000DD15E6 /* GestureArea.xib */,
+				CE4811A21F70FFEE00DD15E6 /* GBGestureAreaView.swift */,
+				CE4811A01F70FFD000DD15E6 /* GestureAreaView.xib */,
+				CE4811CE1F7525BD00DD15E6 /* GBGestureAreaDelegate.swift */,
 			);
 			name = GestureAreaView;
 			sourceTree = "<group>";
@@ -146,7 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4811A11F70FFD000DD15E6 /* GestureArea.xib in Resources */,
+				CE4811A11F70FFD000DD15E6 /* GestureAreaView.xib in Resources */,
 				CE4811991F70FE1D00DD15E6 /* LaunchScreen.storyboard in Resources */,
 				CE4811961F70FE1D00DD15E6 /* Assets.xcassets in Resources */,
 				CE4811941F70FE1D00DD15E6 /* Main.storyboard in Resources */,
@@ -161,7 +164,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4811911F70FE1D00DD15E6 /* ViewController.swift in Sources */,
-				CE4811A31F70FFEE00DD15E6 /* GBGestureArea.swift in Sources */,
+				CE4811A31F70FFEE00DD15E6 /* GBGestureAreaView.swift in Sources */,
+				CE4811CF1F7525BD00DD15E6 /* GBGestureAreaDelegate.swift in Sources */,
 				CE48118F1F70FE1D00DD15E6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +332,7 @@
 				CE48119F1F70FE1D00DD15E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
