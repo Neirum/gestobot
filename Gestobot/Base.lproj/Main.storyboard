@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="buU-7o-LVw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--GestoBot-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gestobot" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eik-6Y-8Zm" customClass="GBGestureAreaView" customModule="Gestobot" customModuleProvider="target">
-                                <rect key="frame" x="24" y="169.5" width="327" height="327"/>
+                                <rect key="frame" x="24" y="170" width="327" height="327"/>
                                 <color key="backgroundColor" red="0.99924391509999999" green="0.80151389279999996" blue="0.39250035709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -40,26 +40,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8o8-c5-6ga" userLabel="Coordinates">
-                                <rect key="frame" x="24" y="528.5" width="327" height="20.5"/>
+                                <rect key="frame" x="24" y="529" width="327" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99541014630000002" green="1" blue="0.97899286919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jae-pj-lto">
-                                <rect key="frame" x="164" y="629" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="Pp7-Bc-IQh"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VFh-fM-BhJ"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.47184234860000002" green="0.61759787799999999" blue="0.67679977420000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Jae-pj-lto" secondAttribute="bottom" constant="8" id="3ZK-0U-PUy"/>
-                            <constraint firstItem="Jae-pj-lto" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3sI-r5-vZL"/>
                             <constraint firstItem="eik-6Y-8Zm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="DqU-nE-gvD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8o8-c5-6ga" secondAttribute="trailing" constant="8" id="X2K-IO-TrD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eik-6Y-8Zm" secondAttribute="trailing" constant="8" id="drk-CU-sPY"/>
@@ -68,6 +56,15 @@
                             <constraint firstItem="eik-6Y-8Zm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="itJ-BD-ys4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="GestoBot" id="Jpv-ku-XgF" userLabel="GestoBot">
+                        <barButtonItem key="leftBarButtonItem" image="settings" id="V6Z-g0-THz">
+                            <inset key="imageInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                            <color key="tintColor" red="0.31764705882352939" green="0.41960784313725491" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="iVV-EM-tbT" kind="presentation" id="Npv-7c-58D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="gestureView" destination="eik-6Y-8Zm" id="ptD-ae-kyT"/>
                         <outlet property="resultLabel" destination="8o8-c5-6ga" id="rAL-XZ-ObQ"/>
@@ -75,7 +72,146 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
+            <point key="canvasLocation" x="1772" y="35.532233883058474"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="1ij-I4-LDv">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="iVV-EM-tbT" customClass="GBSettingsViewController" customModule="Gestobot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YSA-Ux-fee"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZAK-T3-bpn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="boj-M7-JDb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6r-IU-jzO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.94557482004165649" green="0.79542392492294312" blue="0.4501916766166687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Settings" id="gl2-38-Btm">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="gEP-Je-vQH">
+                                            <color key="tintColor" red="0.42439481616020203" green="0.48255890607833862" blue="0.46221792697906494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="dJF-L6-8iW" kind="unwind" unwindAction="unwindToMainScreenWithSegue:" id="AXC-BO-6vx"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmT-DA-751">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="doO-M7-XKA">
+                                        <rect key="frame" x="16" y="32" width="343" height="90"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zfZ-ao-sWF">
+                                                <rect key="frame" x="67.5" y="0.0" width="208.5" height="41"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Area Scale:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTT-41-TZ0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="134.5" height="41"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                        <color key="textColor" red="0.99541014630000002" green="1" blue="0.97899286919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3x3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCv-nl-QyX">
+                                                        <rect key="frame" x="150.5" y="0.0" width="58" height="41"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                        <color key="textColor" red="0.99541014630000002" green="1" blue="0.97899286919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BQ8-fl-p9V">
+                                                <rect key="frame" x="123" y="49" width="97.5" height="41"/>
+                                                <subviews>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqh-KM-DyM" userLabel="Plus" customClass="GBRoundButton" customModule="Gestobot" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="uqh-KM-DyM" secondAttribute="height" multiplier="1:1" id="jg3-WL-pa0"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" red="0.97391396760940552" green="0.79922538995742798" blue="0.39342066645622253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="plusButtonDidTapped:" destination="iVV-EM-tbT" eventType="touchUpInside" id="Jty-eh-bTa"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9E-dk-D5G" userLabel="Minus" customClass="GBRoundButton" customModule="Gestobot" customModuleProvider="target">
+                                                        <rect key="frame" x="57" y="0.0" width="40.5" height="41"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="i9E-dk-D5G" secondAttribute="height" multiplier="1:1" id="63A-A1-WwJ"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                                <color key="value" red="0.97391396760940552" green="0.79922538995742798" blue="0.39342066645622253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="minusButtonDidTapped:" destination="iVV-EM-tbT" eventType="touchUpInside" id="DZI-fE-KqU"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.47103708982467651" green="0.61618107557296753" blue="0.67909204959869385" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="doO-M7-XKA" firstAttribute="top" secondItem="SmT-DA-751" secondAttribute="top" constant="32" id="NrE-8H-3TK"/>
+                                    <constraint firstItem="doO-M7-XKA" firstAttribute="leading" secondItem="SmT-DA-751" secondAttribute="leading" constant="16" id="OLW-s3-3hO"/>
+                                    <constraint firstAttribute="trailing" secondItem="doO-M7-XKA" secondAttribute="trailing" constant="16" id="xkU-Bi-X1p"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94557482004165649" green="0.79542392492294312" blue="0.4501916766166687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="I6r-IU-jzO" secondAttribute="trailing" id="4LL-G8-tyE"/>
+                            <constraint firstItem="I6r-IU-jzO" firstAttribute="leading" secondItem="boj-M7-JDb" secondAttribute="leading" id="Bzq-oO-mxD"/>
+                            <constraint firstItem="ZAK-T3-bpn" firstAttribute="top" secondItem="SmT-DA-751" secondAttribute="bottom" id="I1R-vC-fDX"/>
+                            <constraint firstItem="I6r-IU-jzO" firstAttribute="top" secondItem="YSA-Ux-fee" secondAttribute="bottom" id="Ohn-OJ-dVA"/>
+                            <constraint firstItem="SmT-DA-751" firstAttribute="leading" secondItem="boj-M7-JDb" secondAttribute="leading" id="e7E-hA-25z"/>
+                            <constraint firstAttribute="trailing" secondItem="SmT-DA-751" secondAttribute="trailing" id="pnC-dF-FZi"/>
+                            <constraint firstItem="SmT-DA-751" firstAttribute="top" secondItem="I6r-IU-jzO" secondAttribute="bottom" id="sLm-UD-TH7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scaleLabel" destination="FCv-nl-QyX" id="ztZ-OP-0XK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="prd-7J-9TB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dJF-L6-8iW" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2604" y="36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QuC-Wi-6Nz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="buU-7o-LVw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tZb-G6-fgl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.97391396760940552" green="0.79922538995742798" blue="0.39342066645622253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Jx7-TF-0Y5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6dA-Vv-JVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832.79999999999995" y="35.532233883058474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="32" height="32"/>
+    </resources>
 </document>

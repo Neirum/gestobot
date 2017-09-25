@@ -64,18 +64,18 @@ import UIKit
     private func directionOfMotion(from startPoint: CGPoint, to finishPoint: CGPoint) -> GBGestureDirection? {
         let startPoint = coordOfRectFor(startPoint)
         let finishPoint = coordOfRectFor(finishPoint)
-        
+
         return directionFor(startCoord: startPoint, finishCoord: finishPoint)
     }
     
     private func coordOfRectFor(_ point: CGPoint) -> (x: Int, y: Int) {
         let rectWidth = bounds.size.width / CGFloat(sectionsCount)
-        let xCoord = Int(point.x / rectWidth)
+        let xPoint = Int(point.x / rectWidth)
         
         let rectHigh = bounds.size.height / CGFloat(sectionsCount)
-        let yCoord = Int(point.y / rectHigh)
+        let yPoint =  Int(point.y / rectHigh)
         
-        return (xCoord, yCoord)
+        return (xPoint, yPoint)
     }
     
     private func directionFor(startCoord: (x: Int, y: Int), finishCoord: (x: Int, y: Int) ) -> GBGestureDirection? {
