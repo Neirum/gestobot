@@ -136,7 +136,6 @@
 				TargetAttributes = {
 					CE48118A1F70FE1D00DD15E6 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = EDV4TL2R6W;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -310,8 +309,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = EDV4TL2R6W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Gestobot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SZ.Gestobot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -325,8 +325,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = EDV4TL2R6W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Gestobot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SZ.Gestobot;
 				PRODUCT_NAME = "$(TARGET_NAME)";

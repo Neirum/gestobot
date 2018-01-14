@@ -42,5 +42,4 @@ class GBRoundButton: UIButton {
         plusPath.stroke();
     }
 
-
 }

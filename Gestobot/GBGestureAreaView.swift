@@ -139,7 +139,7 @@ import UIKit
         
         path.lineWidth = lineWidth
         UIColor.white.setFill()
-        UIColor.white.setStroke()
+        UIColor.black.setStroke()
         path.stroke()
     }
 

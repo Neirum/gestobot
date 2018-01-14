@@ -28,6 +28,13 @@ class ViewController: UIViewController {
         gestureView.scale = (segue.source as! GBSettingsViewController).areaScale
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "settings" {
+            let settingVC = segue.destination as! GBSettingsViewController
+            settingVC.areaScale = gestureView.scale
+        }
+    }
+    
 }
 
 extension ViewController: GBGestureAreaViewDelegate {
