@@ -10,13 +10,7 @@ import UIKit
 
 
 @IBDesignable class GBGestureAreaView: UIView {
-
-    @IBInspectable var scale: Int = 2 {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    @IBInspectable var lineWidth: CGFloat = 5.0
+    
     public var delegate: GBGestureAreaViewDelegate?
     
     private var sectionsCount: Int {
@@ -27,6 +21,13 @@ import UIKit
         return sectionsCount - 1
     }
     
+    @IBInspectable var scale: Int = 2 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    @IBInspectable var lineWidth: CGFloat = 5.0
+
     private var sectionWidth: CGFloat!
     
     private var prevTouchPoint: CGPoint = CGPoint.zero
@@ -53,6 +54,7 @@ import UIKit
         delegate?.gestureAreaViewTouchEnded()
     }
     
+    // MRK: - Gesture Calculation
     private func checkTouchWithNewPoint(_ point: CGPoint) {
         guard let direction = directionOfMotion(from: self.prevTouchPoint, to: point) else {
             return
