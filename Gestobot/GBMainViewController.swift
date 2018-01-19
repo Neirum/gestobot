@@ -8,10 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GBMainViewController: UIViewController {
 
     @IBOutlet weak var gestureView: GBGestureAreaView!
     @IBOutlet weak var resultLabel: UILabel!
+    
+    let brokerService = GBMqttService()
     
     var movesCounter: Int = 0
     
@@ -28,6 +30,10 @@ class ViewController: UIViewController {
         gestureView.scale = (segue.source as! GBSettingsViewController).areaScale
     }
     
+    @IBAction func connectButtonDidTapped(_ sender: Any) {
+        brokerService.connect()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "settings" {
             let settingVC = segue.destination as! GBSettingsViewController
@@ -37,7 +43,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: GBGestureAreaViewDelegate {
+extension GBMainViewController: GBGestureAreaViewDelegate {
     
     func gestureAreaViewTouchEnded() {
         resultLabel.text = "Touch Ended"

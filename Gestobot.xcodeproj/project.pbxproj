@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		104A04C376E045E3D0CDA5F0 /* Pods_Gestobot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D7870619ACD8BB8DD7C53 /* Pods_Gestobot.framework */; };
+		B70C93372011E88900D73C46 /* GBMqttService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C93362011E88900D73C46 /* GBMqttService.swift */; };
 		CE48118F1F70FE1D00DD15E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48118E1F70FE1D00DD15E6 /* AppDelegate.swift */; };
-		CE4811911F70FE1D00DD15E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4811901F70FE1D00DD15E6 /* ViewController.swift */; };
+		CE4811911F70FE1D00DD15E6 /* GBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4811901F70FE1D00DD15E6 /* GBMainViewController.swift */; };
 		CE4811941F70FE1D00DD15E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4811921F70FE1D00DD15E6 /* Main.storyboard */; };
 		CE4811961F70FE1D00DD15E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4811951F70FE1D00DD15E6 /* Assets.xcassets */; };
 		CE4811991F70FE1D00DD15E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4811971F70FE1D00DD15E6 /* LaunchScreen.storyboard */; };
@@ -23,9 +24,10 @@
 /* Begin PBXFileReference section */
 		14231F8AECF7737514B7EB9D /* Pods-Gestobot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gestobot.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gestobot/Pods-Gestobot.release.xcconfig"; sourceTree = "<group>"; };
 		83F17903DB7B1019089D7A67 /* Pods-Gestobot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gestobot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gestobot/Pods-Gestobot.debug.xcconfig"; sourceTree = "<group>"; };
+		B70C93362011E88900D73C46 /* GBMqttService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBMqttService.swift; sourceTree = "<group>"; };
 		CE48118B1F70FE1D00DD15E6 /* Gestobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gestobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE48118E1F70FE1D00DD15E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE4811901F70FE1D00DD15E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE4811901F70FE1D00DD15E6 /* GBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBMainViewController.swift; sourceTree = "<group>"; };
 		CE4811931F70FE1D00DD15E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE4811951F70FE1D00DD15E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE4811981F70FE1D00DD15E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B70C93352011E83700D73C46 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B70C93362011E88900D73C46 /* GBMqttService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B7AA141B200FF9CD00BD92B6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,10 +80,10 @@
 		B7AA141C200FF9F200BD92B6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B7AA141D200FFA3800BD92B6 /* Views */,
-				B7AA141E200FFA6600BD92B6 /* ViewControllers */,
 				CE4811921F70FE1D00DD15E6 /* Main.storyboard */,
 				CE4811971F70FE1D00DD15E6 /* LaunchScreen.storyboard */,
+				B7AA141D200FFA3800BD92B6 /* Views */,
+				B7AA141E200FFA6600BD92B6 /* ViewControllers */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -90,7 +100,7 @@
 		B7AA141E200FFA6600BD92B6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE4811901F70FE1D00DD15E6 /* ViewController.swift */,
+				CE4811901F70FE1D00DD15E6 /* GBMainViewController.swift */,
 				CEC9B01B1F7919BD00B3028A /* GBSettingsViewController.swift */,
 			);
 			name = ViewControllers;
@@ -126,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B7AA141C200FF9F200BD92B6 /* UI */,
+				B70C93352011E83700D73C46 /* Services */,
 				CE4811A51F71000200DD15E6 /* SupportFiles */,
 				B7AA141B200FF9CD00BD92B6 /* Resources */,
 				CE48118C1F70FE1D00DD15E6 /* Products */,
@@ -286,7 +297,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4811911F70FE1D00DD15E6 /* ViewController.swift in Sources */,
+				CE4811911F70FE1D00DD15E6 /* GBMainViewController.swift in Sources */,
+				B70C93372011E88900D73C46 /* GBMqttService.swift in Sources */,
 				CE4811A31F70FFEE00DD15E6 /* GBGestureAreaView.swift in Sources */,
 				CEC9B01C1F7919BD00B3028A /* GBSettingsViewController.swift in Sources */,
 				CEC9B0211F79242400B3028A /* GBRoundButton.swift in Sources */,

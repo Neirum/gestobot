@@ -14,7 +14,7 @@
         <!--GestoBot-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gestobot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GBMainViewController" customModule="Gestobot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -45,12 +45,24 @@
                                 <color key="textColor" red="0.99541014630000002" green="1" blue="0.97899286919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiX-Zp-2YP">
+                                <rect key="frame" x="130" y="72" width="114" height="30"/>
+                                <color key="backgroundColor" red="0.94447969539999999" green="0.3420896376" blue="0.368280098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Fucking connect">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nd7-DO-Efd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47184234860000002" green="0.61759787799999999" blue="0.67679977420000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eik-6Y-8Zm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="DqU-nE-gvD"/>
+                            <constraint firstItem="oiX-Zp-2YP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="IK8-Mv-5dX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8o8-c5-6ga" secondAttribute="trailing" constant="8" id="X2K-IO-TrD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eik-6Y-8Zm" secondAttribute="trailing" constant="8" id="drk-CU-sPY"/>
+                            <constraint firstItem="oiX-Zp-2YP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f7d-Gc-QNa"/>
                             <constraint firstItem="8o8-c5-6ga" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="gau-rP-rzy"/>
                             <constraint firstItem="8o8-c5-6ga" firstAttribute="top" secondItem="eik-6Y-8Zm" secondAttribute="bottom" constant="32" id="hLJ-PS-NLa"/>
                             <constraint firstItem="eik-6Y-8Zm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="itJ-BD-ys4"/>
