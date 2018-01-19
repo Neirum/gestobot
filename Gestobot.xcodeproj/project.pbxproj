@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104A04C376E045E3D0CDA5F0 /* Pods_Gestobot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D7870619ACD8BB8DD7C53 /* Pods_Gestobot.framework */; };
 		CE48118F1F70FE1D00DD15E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48118E1F70FE1D00DD15E6 /* AppDelegate.swift */; };
 		CE4811911F70FE1D00DD15E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4811901F70FE1D00DD15E6 /* ViewController.swift */; };
 		CE4811941F70FE1D00DD15E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4811921F70FE1D00DD15E6 /* Main.storyboard */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14231F8AECF7737514B7EB9D /* Pods-Gestobot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gestobot.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gestobot/Pods-Gestobot.release.xcconfig"; sourceTree = "<group>"; };
+		83F17903DB7B1019089D7A67 /* Pods-Gestobot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gestobot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gestobot/Pods-Gestobot.debug.xcconfig"; sourceTree = "<group>"; };
 		CE48118B1F70FE1D00DD15E6 /* Gestobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gestobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE48118E1F70FE1D00DD15E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4811901F70FE1D00DD15E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		CE4811CE1F7525BD00DD15E6 /* GBGestureAreaDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBGestureAreaDelegate.swift; sourceTree = "<group>"; };
 		CEC9B01B1F7919BD00B3028A /* GBSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBSettingsViewController.swift; sourceTree = "<group>"; };
 		CEC9B0201F79242400B3028A /* GBRoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBRoundButton.swift; sourceTree = "<group>"; };
+		F19D7870619ACD8BB8DD7C53 /* Pods_Gestobot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gestobot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,12 +43,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104A04C376E045E3D0CDA5F0 /* Pods_Gestobot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE9FE845526CA5C9C9E90597 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83F17903DB7B1019089D7A67 /* Pods-Gestobot.debug.xcconfig */,
+				14231F8AECF7737514B7EB9D /* Pods-Gestobot.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B7AA141B200FF9CD00BD92B6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,10 +96,20 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		B886DBC084AAB527EA110EFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F19D7870619ACD8BB8DD7C53 /* Pods_Gestobot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE4811821F70FE1C00DD15E6 = {
 			isa = PBXGroup;
 			children = (
 				CE48118D1F70FE1D00DD15E6 /* Gestobot */,
+				AE9FE845526CA5C9C9E90597 /* Pods */,
+				B886DBC084AAB527EA110EFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,9 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE48119D1F70FE1D00DD15E6 /* Build configuration list for PBXNativeTarget "Gestobot" */;
 			buildPhases = (
+				6973BEE4951F31490960FF44 /* [CP] Check Pods Manifest.lock */,
 				CE4811871F70FE1D00DD15E6 /* Sources */,
 				CE4811881F70FE1D00DD15E6 /* Frameworks */,
 				CE4811891F70FE1D00DD15E6 /* Resources */,
+				FAED547CB1A7D1239611A69A /* [CP] Embed Pods Frameworks */,
+				542020BD2E663D36DD9FE055 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +232,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		542020BD2E663D36DD9FE055 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gestobot/Pods-Gestobot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6973BEE4951F31490960FF44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FAED547CB1A7D1239611A69A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gestobot/Pods-Gestobot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE4811871F70FE1D00DD15E6 /* Sources */ = {
@@ -351,6 +426,7 @@
 		};
 		CE48119E1F70FE1D00DD15E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83F17903DB7B1019089D7A67 /* Pods-Gestobot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -372,6 +448,7 @@
 		};
 		CE48119F1F70FE1D00DD15E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14231F8AECF7737514B7EB9D /* Pods-Gestobot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
