@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		104A04C376E045E3D0CDA5F0 /* Pods_Gestobot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D7870619ACD8BB8DD7C53 /* Pods_Gestobot.framework */; };
 		B70C93372011E88900D73C46 /* GBMqttService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C93362011E88900D73C46 /* GBMqttService.swift */; };
+		B74FC2FC2098D2A2004E90FB /* GBBrokerConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FC2FB2098D2A2004E90FB /* GBBrokerConnectionViewController.swift */; };
+		B74FC3002098D572004E90FB /* GBBrokerConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FC2FF2098D572004E90FB /* GBBrokerConnectionManager.swift */; };
+		B74FC3022098D8F1004E90FB /* GBDependecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FC3012098D8F1004E90FB /* GBDependecies.swift */; };
 		CE48118F1F70FE1D00DD15E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48118E1F70FE1D00DD15E6 /* AppDelegate.swift */; };
 		CE4811911F70FE1D00DD15E6 /* GBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4811901F70FE1D00DD15E6 /* GBMainViewController.swift */; };
 		CE4811941F70FE1D00DD15E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4811921F70FE1D00DD15E6 /* Main.storyboard */; };
@@ -25,6 +28,9 @@
 		14231F8AECF7737514B7EB9D /* Pods-Gestobot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gestobot.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gestobot/Pods-Gestobot.release.xcconfig"; sourceTree = "<group>"; };
 		83F17903DB7B1019089D7A67 /* Pods-Gestobot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gestobot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gestobot/Pods-Gestobot.debug.xcconfig"; sourceTree = "<group>"; };
 		B70C93362011E88900D73C46 /* GBMqttService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBMqttService.swift; sourceTree = "<group>"; };
+		B74FC2FB2098D2A2004E90FB /* GBBrokerConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBBrokerConnectionViewController.swift; sourceTree = "<group>"; };
+		B74FC2FF2098D572004E90FB /* GBBrokerConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBBrokerConnectionManager.swift; sourceTree = "<group>"; };
+		B74FC3012098D8F1004E90FB /* GBDependecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBDependecies.swift; sourceTree = "<group>"; };
 		CE48118B1F70FE1D00DD15E6 /* Gestobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gestobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE48118E1F70FE1D00DD15E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4811901F70FE1D00DD15E6 /* GBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBMainViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +75,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		B74FC2FE2098D53F004E90FB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B74FC3012098D8F1004E90FB /* GBDependecies.swift */,
+				B74FC2FF2098D572004E90FB /* GBBrokerConnectionManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		B7AA141B200FF9CD00BD92B6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,10 +95,10 @@
 		B7AA141C200FF9F200BD92B6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				CE4811921F70FE1D00DD15E6 /* Main.storyboard */,
 				CE4811971F70FE1D00DD15E6 /* LaunchScreen.storyboard */,
-				B7AA141D200FFA3800BD92B6 /* Views */,
+				CE4811921F70FE1D00DD15E6 /* Main.storyboard */,
 				B7AA141E200FFA6600BD92B6 /* ViewControllers */,
+				B7AA141D200FFA3800BD92B6 /* Views */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -102,6 +117,7 @@
 			children = (
 				CE4811901F70FE1D00DD15E6 /* GBMainViewController.swift */,
 				CEC9B01B1F7919BD00B3028A /* GBSettingsViewController.swift */,
+				B74FC2FB2098D2A2004E90FB /* GBBrokerConnectionViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -137,6 +153,7 @@
 			children = (
 				B7AA141C200FF9F200BD92B6 /* UI */,
 				B70C93352011E83700D73C46 /* Services */,
+				B74FC2FE2098D53F004E90FB /* Managers */,
 				CE4811A51F71000200DD15E6 /* SupportFiles */,
 				B7AA141B200FF9CD00BD92B6 /* Resources */,
 				CE48118C1F70FE1D00DD15E6 /* Products */,
@@ -201,12 +218,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = StasZherebkin;
 				TargetAttributes = {
 					CE48118A1F70FE1D00DD15E6 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = EDV4TL2R6W;
+						DevelopmentTeam = KDR8K3PR74;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -303,6 +320,9 @@
 				CEC9B01C1F7919BD00B3028A /* GBSettingsViewController.swift in Sources */,
 				CEC9B0211F79242400B3028A /* GBRoundButton.swift in Sources */,
 				CE4811CF1F7525BD00DD15E6 /* GBGestureAreaDelegate.swift in Sources */,
+				B74FC3002098D572004E90FB /* GBBrokerConnectionManager.swift in Sources */,
+				B74FC2FC2098D2A2004E90FB /* GBBrokerConnectionViewController.swift in Sources */,
+				B74FC3022098D8F1004E90FB /* GBDependecies.swift in Sources */,
 				CE48118F1F70FE1D00DD15E6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +363,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -350,6 +371,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -400,6 +422,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -407,6 +430,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -444,11 +468,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EDV4TL2R6W;
+				DEVELOPMENT_TEAM = KDR8K3PR74;
 				INFOPLIST_FILE = Gestobot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SZ.Gestobot;
+				PRODUCT_BUNDLE_IDENTIFIER = stas.zherebkin.gestobot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -466,11 +490,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EDV4TL2R6W;
+				DEVELOPMENT_TEAM = KDR8K3PR74;
 				INFOPLIST_FILE = Gestobot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SZ.Gestobot;
+				PRODUCT_BUNDLE_IDENTIFIER = stas.zherebkin.gestobot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;

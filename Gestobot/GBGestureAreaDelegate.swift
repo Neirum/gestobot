@@ -16,6 +16,13 @@ protocol GBGestureAreaViewDelegate {
 
 
 enum GBGestureDirection: String {
-    case Up, Down, Left, Right, LUp, RUp, LDown, RDown
+    case Up = "↑"
+    case Down = "↓"
+    case Left = "←"
+    case Right = "→"
+    case LUp = "↖"
+    case RUp = "↗"
+    case LDown = "↙"
+    case RDown = "↘"
 
 }

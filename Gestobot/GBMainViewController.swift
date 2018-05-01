@@ -12,15 +12,25 @@ class GBMainViewController: UIViewController {
 
     @IBOutlet weak var gestureView: GBGestureAreaView!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var brokerButton: UIButton!
+    @IBOutlet weak var robotsButton: UIButton!
     
     let brokerService = GBMqttService()
+    
+    let brokerConnectionManager = GBDependencies.shared.brokerConnectionManager
     
     var movesCounter: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gestureView.delegate = self
+        configViews()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        brokerConnectionManager.delegate = self
+        configBrokerButtonWithState(state: brokerConnectionManager.state)
+    }
+    
     
     @IBAction func buttonDidTapped(_ sender: Any) {
         gestureView.scale += 1
@@ -30,9 +40,7 @@ class GBMainViewController: UIViewController {
         gestureView.scale = (segue.source as! GBSettingsViewController).areaScale
     }
     
-    @IBAction func connectButtonDidTapped(_ sender: Any) {
-        brokerService.connect()
-    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "settings" {
@@ -41,21 +49,46 @@ class GBMainViewController: UIViewController {
         }
     }
     
+    
+    func configBrokerButtonWithState(state: GBBrokerConnectionState) {
+        switch state {
+        case .connected:
+            brokerButton.backgroundColor = .green
+        case .disconnected:
+            brokerButton.backgroundColor = .red
+        }
+    }
+    
+    func configViews() {
+        gestureView.delegate = self
+        brokerButton.layer.cornerRadius = 5.0
+        brokerButton.clipsToBounds = true
+        robotsButton.layer.cornerRadius = 5.0
+        robotsButton.clipsToBounds = true
+    }
 }
 
 extension GBMainViewController: GBGestureAreaViewDelegate {
     
     func gestureAreaViewTouchEnded() {
-        resultLabel.text = "Touch Ended"
+//        resultLabel.text = "Touch Ended"
         movesCounter = 0
     }
     
     func gestureAreaViewTouchBegan() {
-        resultLabel.text = "TouchStarted"
+//        resultLabel.text = "TouchStarted"
+        resultLabel.text = "*"
     }
     
     func gestureAreaViewTouchMovedIn(direction: GBGestureDirection) {
         movesCounter += 1
-        resultLabel.text = "Moved to : \(direction.rawValue)  moves: \(movesCounter)"
+//        resultLabel.text = "Moved to : \(direction.rawValue)  moves: \(movesCounter)"
+        resultLabel.text = (resultLabel.text ?? "") + "\(direction.rawValue) "
+    }
+}
+
+extension GBMainViewController : GBBrokerConnectionManagerDelegate {
+    func brokerConnectionStateDidUpdate(state: GBBrokerConnectionState) {
+        configBrokerButtonWithState(state: state)
     }
 }

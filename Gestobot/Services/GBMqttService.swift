@@ -9,16 +9,45 @@
 import Foundation
 import CocoaMQTT
 
-class GBMqttService {
-    
-    func connect() {
-        let clientID = "iPhone"
-        let mqtt = CocoaMQTT(clientID: clientID, host: "192.168.33.29", port: 1883)
 
-        mqtt.willMessage = CocoaMQTTWill(topic: "/will", message: "dieout")
+protocol GBMqttServiceBrokerConnectionDelegate {
+    func didConnectToBroker()
+    func didDisconnectBroker(error: Error?)
+}
+
+
+
+class GBMqttService {
+    static let shared = GBMqttService()
+    private var cocoaMqtt: CocoaMQTT?
+    
+    
+    public var brokerConnectionDelegate: GBMqttServiceBrokerConnectionDelegate?
+    
+    public var brokerHost : String? {
+        return cocoaMqtt?.host
+    }
+    
+    public var brokerPort : UInt16? {
+        return cocoaMqtt?.port
+    }
+    
+    func connect(host: String, port: Int) {
+        let clientID = "iPhone"
+        let mqtt = CocoaMQTT(clientID: clientID, host: host, port: UInt16(port))
         mqtt.keepAlive = 60
         mqtt.delegate = self
         mqtt.connect()
+        
+        cocoaMqtt = mqtt
+    }
+    
+    func diconnect() {
+        cocoaMqtt?.disconnect()
+    }
+    
+    func connectionState() -> CocoaMQTTConnState {
+        return cocoaMqtt?.connState ?? .disconnected
     }
 }
 
@@ -26,15 +55,16 @@ class GBMqttService {
 extension GBMqttService: CocoaMQTTDelegate {
     
     public func mqtt(_ mqtt: CocoaMQTT, didConnectAck ack: CocoaMQTTConnAck) {
-        print("didConnect with ack: \(ack.rawValue)");
+        self.brokerConnectionDelegate?.didConnectToBroker()
+    }
+    
+    public func mqttDidDisconnect(_ mqtt: CocoaMQTT, withError err: Error?) {
+        self.brokerConnectionDelegate?.didDisconnectBroker(error: err)
+        cocoaMqtt = nil
     }
     
     public func mqtt(_ mqtt: CocoaMQTT, didPublishMessage message: CocoaMQTTMessage, id: UInt16) {
 
-    }
-    
-    public func mqtt(_ mqtt: CocoaMQTT, didPublishAck id: UInt16) {
-        
     }
     
     public func mqtt(_ mqtt: CocoaMQTT, didReceiveMessage message: CocoaMQTTMessage, id: UInt16 ) {
@@ -49,16 +79,16 @@ extension GBMqttService: CocoaMQTTDelegate {
         
     }
     
-    public func mqttDidPing(_ mqtt: CocoaMQTT) {
+    public func mqtt(_ mqtt: CocoaMQTT, didPublishAck id: UInt16) {
         
+    }
+    
+    public func mqttDidPing(_ mqtt: CocoaMQTT) {
+        print("----------------ping-----------------")
     }
     
     public func mqttDidReceivePong(_ mqtt: CocoaMQTT) {
-        
-    }
-    
-    public func mqttDidDisconnect(_ mqtt: CocoaMQTT, withError err: Error?) {
-        
+        print("----------------pong-----------------")
     }
 
 }
