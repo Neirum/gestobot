@@ -16,14 +16,13 @@ class GBBrokerConnectionViewController: UIViewController {
     @IBOutlet weak var brokerHostTextField: UITextField!
     @IBOutlet weak var brokerPortTextField: UITextField!
     
-    var brokerConnectionManager: GBBrokerConnectionManager!
+    private var brokerConnectionManager = GBDependencies.shared.brokerConnectionManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
         connectedBrokerPortLabel.text = "..."
         connectedBrokerIpLabel.text = "..."
         
-        brokerConnectionManager = GBDependencies.shared.brokerConnectionManager
         brokerConnectionManager.delegate = self
     }
 

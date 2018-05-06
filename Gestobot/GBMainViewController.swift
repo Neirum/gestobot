@@ -14,13 +14,17 @@ class GBMainViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var brokerButton: UIButton!
     @IBOutlet weak var robotsButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     
     let brokerService = GBMqttService()
-    
     let brokerConnectionManager = GBDependencies.shared.brokerConnectionManager
     
-    var movesCounter: Int = 0
+    private let movesLimit = 20
+    private var movesToSend = [GBGestureDirection]()
     
+    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configViews()
@@ -32,15 +36,10 @@ class GBMainViewController: UIViewController {
     }
     
     
-    @IBAction func buttonDidTapped(_ sender: Any) {
-        gestureView.scale += 1
-    }
- 
+    // MARK: - Navigation
     @IBAction func unwindToMainScreen(segue: UIStoryboardSegue) {
         gestureView.scale = (segue.source as! GBSettingsViewController).areaScale
     }
-    
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "settings" {
@@ -49,8 +48,26 @@ class GBMainViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions
     
-    func configBrokerButtonWithState(state: GBBrokerConnectionState) {
+    @IBAction func resetCommands(_ sender: Any) {
+        resetButton.isEnabled = false
+        sendButton.isEnabled = false
+
+        movesToSend.removeAll()
+        resultLabel.text = ""
+    }
+    
+    @IBAction func sendCommands(_ sender: Any) {
+        resetButton.isEnabled = false
+        sendButton.isEnabled = false
+        
+        resultLabel.text = ""
+        movesToSend.removeAll()
+    }
+
+    // MARK: - Private
+    private func configBrokerButtonWithState(state: GBBrokerConnectionState) {
         switch state {
         case .connected:
             brokerButton.backgroundColor = .green
@@ -59,34 +76,47 @@ class GBMainViewController: UIViewController {
         }
     }
     
-    func configViews() {
+    private func configViews() {
         gestureView.delegate = self
         brokerButton.layer.cornerRadius = 5.0
         brokerButton.clipsToBounds = true
         robotsButton.layer.cornerRadius = 5.0
         robotsButton.clipsToBounds = true
+        
+        
+        sendButton.setTitleColor(.gray, for: .disabled)
+        sendButton.setTitleColor(.lightOrange, for: .normal)
+
+        resetButton.setTitleColor(.gray, for: .disabled)
+        resetButton.setTitleColor(.white, for: .normal)
+        
+        sendButton.isEnabled = false
+        resetButton.isEnabled = false
     }
 }
 
+// MARK: - GBGestureAreaViewDelegate
 extension GBMainViewController: GBGestureAreaViewDelegate {
     
     func gestureAreaViewTouchEnded() {
-//        resultLabel.text = "Touch Ended"
-        movesCounter = 0
     }
     
     func gestureAreaViewTouchBegan() {
-//        resultLabel.text = "TouchStarted"
+        resetButton.isEnabled = true
+        sendButton.isEnabled = true
+
         resultLabel.text = "*"
     }
     
     func gestureAreaViewTouchMovedIn(direction: GBGestureDirection) {
-        movesCounter += 1
-//        resultLabel.text = "Moved to : \(direction.rawValue)  moves: \(movesCounter)"
-        resultLabel.text = (resultLabel.text ?? "") + "\(direction.rawValue) "
+        if (movesToSend.count < movesLimit) {
+            resultLabel.text = (resultLabel.text ?? "") + "\(direction.rawValue) "
+            movesToSend.append(direction)
+        }
     }
 }
 
+// MARK: - GBBrokerConnectionManagerDelegate
 extension GBMainViewController : GBBrokerConnectionManagerDelegate {
     func brokerConnectionStateDidUpdate(state: GBBrokerConnectionState) {
         configBrokerButtonWithState(state: state)

@@ -12,6 +12,7 @@
 		B74FC2FC2098D2A2004E90FB /* GBBrokerConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FC2FB2098D2A2004E90FB /* GBBrokerConnectionViewController.swift */; };
 		B74FC3002098D572004E90FB /* GBBrokerConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FC2FF2098D572004E90FB /* GBBrokerConnectionManager.swift */; };
 		B74FC3022098D8F1004E90FB /* GBDependecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FC3012098D8F1004E90FB /* GBDependecies.swift */; };
+		B78F1A16209C4C0200F1A3C4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78F1A15209C4C0200F1A3C4 /* UIColor.swift */; };
 		CE48118F1F70FE1D00DD15E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48118E1F70FE1D00DD15E6 /* AppDelegate.swift */; };
 		CE4811911F70FE1D00DD15E6 /* GBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4811901F70FE1D00DD15E6 /* GBMainViewController.swift */; };
 		CE4811941F70FE1D00DD15E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4811921F70FE1D00DD15E6 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		B74FC2FB2098D2A2004E90FB /* GBBrokerConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBBrokerConnectionViewController.swift; sourceTree = "<group>"; };
 		B74FC2FF2098D572004E90FB /* GBBrokerConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBBrokerConnectionManager.swift; sourceTree = "<group>"; };
 		B74FC3012098D8F1004E90FB /* GBDependecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBDependecies.swift; sourceTree = "<group>"; };
+		B78F1A15209C4C0200F1A3C4 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CE48118B1F70FE1D00DD15E6 /* Gestobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gestobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE48118E1F70FE1D00DD15E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4811901F70FE1D00DD15E6 /* GBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBMainViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 				B74FC2FF2098D572004E90FB /* GBBrokerConnectionManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		B78F1A14209C4BEC00F1A3C4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B78F1A15209C4C0200F1A3C4 /* UIColor.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		B7AA141B200FF9CD00BD92B6 /* Resources */ = {
@@ -151,6 +161,7 @@
 		CE48118D1F70FE1D00DD15E6 /* Gestobot */ = {
 			isa = PBXGroup;
 			children = (
+				B78F1A14209C4BEC00F1A3C4 /* Helpers */,
 				B7AA141C200FF9F200BD92B6 /* UI */,
 				B70C93352011E83700D73C46 /* Services */,
 				B74FC2FE2098D53F004E90FB /* Managers */,
@@ -321,6 +332,7 @@
 				CEC9B0211F79242400B3028A /* GBRoundButton.swift in Sources */,
 				CE4811CF1F7525BD00DD15E6 /* GBGestureAreaDelegate.swift in Sources */,
 				B74FC3002098D572004E90FB /* GBBrokerConnectionManager.swift in Sources */,
+				B78F1A16209C4C0200F1A3C4 /* UIColor.swift in Sources */,
 				B74FC2FC2098D2A2004E90FB /* GBBrokerConnectionViewController.swift in Sources */,
 				B74FC3022098D8F1004E90FB /* GBDependecies.swift in Sources */,
 				CE48118F1F70FE1D00DD15E6 /* AppDelegate.swift in Sources */,

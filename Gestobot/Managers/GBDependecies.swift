@@ -13,9 +13,8 @@ class GBDependencies {
     
     static let shared = GBDependencies()
     
-    public var brokerConnectionManager : GBBrokerConnectionManager {
-        return GBBrokerConnectionManager()
-    }
+    
+    public lazy var brokerConnectionManager = GBBrokerConnectionManager()
     
     
 }
