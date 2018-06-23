@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		104A04C376E045E3D0CDA5F0 /* Pods_Gestobot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D7870619ACD8BB8DD7C53 /* Pods_Gestobot.framework */; };
 		B70C93372011E88900D73C46 /* GBMqttService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C93362011E88900D73C46 /* GBMqttService.swift */; };
+		B733A04B209EF09D00BE72CE /* GBRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B733A04A209EF09D00BE72CE /* GBRobot.swift */; };
+		B733A04E209F14AD00BE72CE /* GBRobotsControlManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B733A04D209F14AD00BE72CE /* GBRobotsControlManager.swift */; };
 		B74FC2FC2098D2A2004E90FB /* GBBrokerConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FC2FB2098D2A2004E90FB /* GBBrokerConnectionViewController.swift */; };
 		B74FC3002098D572004E90FB /* GBBrokerConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FC2FF2098D572004E90FB /* GBBrokerConnectionManager.swift */; };
 		B74FC3022098D8F1004E90FB /* GBDependecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74FC3012098D8F1004E90FB /* GBDependecies.swift */; };
@@ -29,6 +31,8 @@
 		14231F8AECF7737514B7EB9D /* Pods-Gestobot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gestobot.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gestobot/Pods-Gestobot.release.xcconfig"; sourceTree = "<group>"; };
 		83F17903DB7B1019089D7A67 /* Pods-Gestobot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gestobot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gestobot/Pods-Gestobot.debug.xcconfig"; sourceTree = "<group>"; };
 		B70C93362011E88900D73C46 /* GBMqttService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBMqttService.swift; sourceTree = "<group>"; };
+		B733A04A209EF09D00BE72CE /* GBRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRobot.swift; sourceTree = "<group>"; };
+		B733A04D209F14AD00BE72CE /* GBRobotsControlManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBRobotsControlManager.swift; sourceTree = "<group>"; };
 		B74FC2FB2098D2A2004E90FB /* GBBrokerConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBBrokerConnectionViewController.swift; sourceTree = "<group>"; };
 		B74FC2FF2098D572004E90FB /* GBBrokerConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBBrokerConnectionManager.swift; sourceTree = "<group>"; };
 		B74FC3012098D8F1004E90FB /* GBDependecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBDependecies.swift; sourceTree = "<group>"; };
@@ -77,11 +81,29 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		B733A049209EF08D00BE72CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B733A04A209EF09D00BE72CE /* GBRobot.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B733A04C209EF16E00BE72CE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CE4811971F70FE1D00DD15E6 /* LaunchScreen.storyboard */,
+				CE4811921F70FE1D00DD15E6 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		B74FC2FE2098D53F004E90FB /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				B74FC3012098D8F1004E90FB /* GBDependecies.swift */,
 				B74FC2FF2098D572004E90FB /* GBBrokerConnectionManager.swift */,
+				B733A04D209F14AD00BE72CE /* GBRobotsControlManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -105,8 +127,7 @@
 		B7AA141C200FF9F200BD92B6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				CE4811971F70FE1D00DD15E6 /* LaunchScreen.storyboard */,
-				CE4811921F70FE1D00DD15E6 /* Main.storyboard */,
+				B733A04C209EF16E00BE72CE /* Storyboards */,
 				B7AA141E200FFA6600BD92B6 /* ViewControllers */,
 				B7AA141D200FFA3800BD92B6 /* Views */,
 			);
@@ -161,6 +182,7 @@
 		CE48118D1F70FE1D00DD15E6 /* Gestobot */ = {
 			isa = PBXGroup;
 			children = (
+				B733A049209EF08D00BE72CE /* Models */,
 				B78F1A14209C4BEC00F1A3C4 /* Helpers */,
 				B7AA141C200FF9F200BD92B6 /* UI */,
 				B70C93352011E83700D73C46 /* Services */,
@@ -329,6 +351,7 @@
 				B70C93372011E88900D73C46 /* GBMqttService.swift in Sources */,
 				CE4811A31F70FFEE00DD15E6 /* GBGestureAreaView.swift in Sources */,
 				CEC9B01C1F7919BD00B3028A /* GBSettingsViewController.swift in Sources */,
+				B733A04E209F14AD00BE72CE /* GBRobotsControlManager.swift in Sources */,
 				CEC9B0211F79242400B3028A /* GBRoundButton.swift in Sources */,
 				CE4811CF1F7525BD00DD15E6 /* GBGestureAreaDelegate.swift in Sources */,
 				B74FC3002098D572004E90FB /* GBBrokerConnectionManager.swift in Sources */,
@@ -336,6 +359,7 @@
 				B74FC2FC2098D2A2004E90FB /* GBBrokerConnectionViewController.swift in Sources */,
 				B74FC3022098D8F1004E90FB /* GBDependecies.swift in Sources */,
 				CE48118F1F70FE1D00DD15E6 /* AppDelegate.swift in Sources */,
+				B733A04B209EF09D00BE72CE /* GBRobot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KDR8K3PR74;
@@ -500,6 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KDR8K3PR74;

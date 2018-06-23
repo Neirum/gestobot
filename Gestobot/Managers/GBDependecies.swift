@@ -16,5 +16,6 @@ class GBDependencies {
     
     public lazy var brokerConnectionManager = GBBrokerConnectionManager()
     
+    public lazy var robotsController = GBRobotsControlManager()
     
 }

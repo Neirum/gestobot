@@ -14,14 +14,14 @@ public enum GBBrokerConnectionState: UInt {
     case disconnected
 }
 
-protocol GBBrokerConnectionManagerDelegate {
+protocol GBBrokerConnectionManagerDelegate: AnyObject {
     func brokerConnectionStateDidUpdate(state: GBBrokerConnectionState)
 }
 
 
 class GBBrokerConnectionManager {
     
-    var delegate: GBBrokerConnectionManagerDelegate?
+    weak var delegate: GBBrokerConnectionManagerDelegate?
     
     var host : String {
         return mqttService.brokerHost ?? "N/A"
@@ -36,7 +36,7 @@ class GBBrokerConnectionManager {
     }
     
     var state: GBBrokerConnectionState {
-        switch mqttService.connectionState() {
+        switch mqttService.connectionState {
         case .connected:
             return .connected
         default:
